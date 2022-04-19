@@ -16,7 +16,8 @@ public class Product {
     }
     
     //METHOD MAIND
-    public Double priceTag(){
+    public Double priceTag(double amount){
+        price = amount;
         return price;
     }
     

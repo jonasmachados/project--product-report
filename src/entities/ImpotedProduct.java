@@ -14,10 +14,19 @@ public class ImpotedProduct extends Product {
         super(name, price);
         this.customsFee = customsFee;
     }
-    
+
     @Override
-    public Double priceTag(){
-        return price += customsFee;
+    public Double priceTag(double amount) {
+        super.priceTag(amount);
+        totalPrice();
+        return price;
+    }
+
+    double sum = 0;
+
+    public Double totalPrice() {
+        sum = price + customsFee;
+        return sum;
     }
 
     //GET AND SET
