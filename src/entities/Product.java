@@ -3,7 +3,7 @@ package entities;
 public class Product {
 
     private String name;
-    private Double price;
+    protected Double price;
 
     //CONSTRUCTOR
     public Product() {
@@ -13,6 +13,11 @@ public class Product {
     public Product(String name, Double price) {
         this.name = name;
         this.price = price;
+    }
+    
+    //METHOD MAIND
+    public Double priceTag(){
+        return price;
     }
     
     //GET AND SET
@@ -31,7 +36,6 @@ public class Product {
     public void setPrice(Double price) {
         this.price = price;
     }
-    
-    
+      
 
 }
