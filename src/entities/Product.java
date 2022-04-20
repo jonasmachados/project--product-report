@@ -14,13 +14,15 @@ public class Product {
         this.name = name;
         this.price = price;
     }
-    
+
     //METHOD MAIND
-    public Double priceTag(double amount){
-        price = amount;
-        return price;
+    public String priceTag() {
+        return ""
+                + name
+                + " $ "
+                + String.format("%.2f", price);
     }
-    
+
     //GET AND SET
     public String getName() {
         return name;
@@ -37,6 +39,6 @@ public class Product {
     public void setPrice(Double price) {
         this.price = price;
     }
-      
 
+    
 }

@@ -10,23 +10,25 @@ public class ImpotedProduct extends Product {
     }
 
     //OONSTRUCTOR
-    public ImpotedProduct(Double customsFee, String name, Double price) {
+    public ImpotedProduct(String name, Double price, Double customsFee) {
         super(name, price);
         this.customsFee = customsFee;
     }
 
     @Override
-    public Double priceTag(double amount) {
-        super.priceTag(amount);
-        totalPrice();
-        return price;
+    public String priceTag() {
+        return ""
+                + getName()
+                + " $ "
+                + String.format("%.2f", totalPrice())
+                + " (Customs fee: $ "
+                + customsFee
+                + ") ";
     }
 
-    double sum = 0;
-
     public Double totalPrice() {
-        sum = price + customsFee;
-        return sum;
+        price += customsFee;
+        return price;
     }
 
     //GET AND SET
